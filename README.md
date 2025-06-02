@@ -42,7 +42,7 @@ for port in range(1, 65536):  # Full range up to port 65535
 1. **Clone this repository:**
 
    ```bash
-   git clone https://github.com/yourusername/python-port-scanner.git
+   git clone https://github.com/likithgajula/python-port-scanner.git
    cd python-port-scanner
    ```
 
