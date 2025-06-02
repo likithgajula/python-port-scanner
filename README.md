@@ -1,36 +1,42 @@
-# 🔍 python-port-scanner
+# 🔍 Python Multi-threaded Port Scanner (Custom Target Support)
 
 A fast, simple, and efficient **multi-threaded TCP port scanner** written in Python.  
-This project helps identify open ports on a target using raw socket programming and threading for performance — a great way to learn how tools like Nmap work under the hood.
+Now with **command-line support** to specify any target host — giving users full control over where and what they scan.
+
+Perfect for learning socket programming, ethical hacking fundamentals, or building your own tools inspired by Nmap.
 
 ---
 
 ## 🧑‍💻 How It Works
 
+- Accepts a **target host** as a command-line argument  
+  (defaults to `scanme.nmap.org` if none is provided)
 - Creates TCP socket connections to the target host’s ports  
 - Uses `connect_ex()` to check if a port is open (non-blocking)  
 - Implements threading to scan multiple ports concurrently  
 - Uses `threading.Lock()` for clean console output  
-- Sets a 0.5 second timeout per connection to avoid delays
+- Sets a 0.5 second timeout per connection to avoid long delays
 
 ---
 
 ## 🔧 Customizing Port Range
 
-By default, the script scans ports **1 to 1024**, which includes the most commonly used system and service ports.
+By default, the script scans ports **1 to 1024**, which covers the most common service ports.
 
 👨‍💻 **Want to scan more ports (like up to 65535)?**
 
-Open `scanner.py` and find this line:
+Open `scanner.py` and find this section:
 
 ```python
-for port in range(1, 1025):  # Default range from port 1 to 1024
+start_port = 1
+end_port = 1024
 ```
 
 🔁 **Change it to:**
 
 ```python
-for port in range(1, 65536):  # Full range up to port 65535
+start_port = 1
+end_port = 65535
 ```
 
 💡 You can modify the range as needed depending on your scan requirements.
@@ -46,11 +52,13 @@ for port in range(1, 65536):  # Full range up to port 65535
    cd python-port-scanner
    ```
 
-2. **Run the scanner script:**
+2. **Run the scanner script with a custom target:**
 
    ```bash
-   python3 scanner.py
+   python3 scanner.py <target>
    ```
+
+   ✅ If no target is provided, it defaults to `scanme.nmap.org`.
 
 3. **Observe the output listing open ports.**
 
@@ -63,7 +71,7 @@ for port in range(1, 65536):  # Full range up to port 65535
 [+] Port 80 is OPEN
 [+] Port 443 is OPEN
 
-Scan complete.
+Scan complete for target: scanme.nmap.org
 ```
 
 ---
@@ -78,6 +86,29 @@ Always scan **only** targets you **own** or have **explicit permission** to test
 ## 📽️ Demo Video
 
 Watch a live demo of this scanner running on Kali Linux:  
-🔗 [LinkedIn Demo Video](https://www.linkedin.com/your-demo-link) <!-- Replace this with your actual LinkedIn video link -->
+🔗 [LinkedIn Demo Video](https://www.linkedin.com/your-demo-link) <!-- Replace with your real video -->
+
+---
+
+## 🛠️ Tech Stack
+
+- Python 3
+- `socket` for TCP connections  
+- `threading` for concurrency  
+- `sys.argv` for command-line input
+
+---
+
+## ⭐ Like This Project?
+
+- Star the repo if you found it helpful  
+- Fork it to expand or experiment  
+- Share with others learning cybersecurity
+
+---
+
+## 📬 Contact
+
+For feedback, collaboration, or walkthroughs — connect with me on [LinkedIn](https://www.linkedin.com/in/likithgajula)
 
 ---
