@@ -1,8 +1,9 @@
 import socket
 import threading
+import sys
 
-# Target configuration
-target_host = "scanme.nmap.org"
+# Get target from command-line argument or default to scanme.nmap.org
+target_host = sys.argv[1] if len(sys.argv) > 1 else "scanme.nmap.org"
 start_port = 1
 end_port = 1024
 
@@ -32,4 +33,4 @@ for port in range(start_port, end_port + 1):
 for t in threads:
     t.join()
 
-print("\nScan complete.")
+print(f"\nScan complete for target: {target_host}")
