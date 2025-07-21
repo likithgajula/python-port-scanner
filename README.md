@@ -86,7 +86,7 @@ Always scan **only** targets you **own** or have **explicit permission** to test
 ## 📽️ Demo Video
 
 Watch a live demo of this scanner running on Kali Linux:  
-🔗 [LinkedIn Demo Video](https://www.linkedin.com/your-demo-link) <!-- Replace with your real video -->
+🔗 [LinkedIn Demo Video](https://www.linkedin.com/posts/likithgajula_python-cybersecurity-portscanner-activity-7335301127074152448-ikFk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKYyccBUMcsEb9xU18G0waIobWaFyCS4Vw) <!-- Replace with your real video -->
 
 ---
 
